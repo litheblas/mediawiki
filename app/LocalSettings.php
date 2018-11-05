@@ -22,7 +22,7 @@ $wgMetaNamespace = "Meta";
 # nginx config file
 $wgScriptPath = "/w";
 $wgScriptExtension = ".php";
-$wgArticlePath = "/_/$1";
+$wgArticlePath = "/$1";
 $wgUsePathInfo = true;
 
 ## The protocol and server name to use in fully-qualified URLs
