@@ -1,0 +1,33 @@
+version: '3.4'
+services:
+  mediawiki:
+    image: quay.io/litheblas/mediawiki:latest
+    build:
+      context: .
+    ports:
+      - 8000:80
+    links:
+      - database
+    volumes:
+      - /app/w/images
+    environment:
+      MW_DB_HOST: database
+      MW_DB_NAME: mediawiki
+      MW_DB_USER: mediawiki
+      MW_DB_PASSWORD: dev
+      MW_BASE_URL: http://localhost:8000
+      MW_EMAIL_ADDRESS: wiki@litheblas.org
+      MW_OIDC_NAME: Blåsbasen
+      MW_OIDC_URL: https://internt.litheblas.org/auth/openid/
+      MW_OIDC_CLIENT_ID: ''
+      MW_OIDC_CLIENT_SECRET: ''
+      MW_SECRET_KEY: 'abcdef'
+      MW_UPGRADE_KEY: '1234'
+
+  database:
+    image: mariadb
+    environment:
+      MYSQL_DATABASE: mediawiki
+      MYSQL_USER: mediawiki
+      MYSQL_PASSWORD: dev
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
