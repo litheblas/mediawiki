@@ -60,9 +60,25 @@ $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 $wgMainCacheType = CACHE_ACCEL;
 $wgMemCachedServers = [];
 
-## To enable image uploads, make sure the 'images' directory
-## is writable, then set this to true:
+## File uploads
 $wgEnableUploads = true;
+$wgFileExtensions = array_merge(
+  $wgFileExtensions,
+  [
+    "ai",  # Adobe Illustrator
+    "eps",  # Encapsulated PostScript
+    "m4a",  # MPEG-4 audio
+    "mid",  # MIDI
+    "mp3",
+    "mp4",  # MPEG-4 audio
+    "otf",  # OpenType font
+    "pdf",
+    "ps",  # PostScript
+    "sib",  # Sibelius
+    "svg",
+    "ttf",  # TrueType font
+  ]
+);
 $wgUseImageMagick = true;
 $wgImageMagickConvertCommand = "/usr/bin/convert";
 
