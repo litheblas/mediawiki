@@ -143,6 +143,7 @@ wfLoadExtension( 'WikiEditor' );
 wfLoadExtension( 'MobileFrontend' );
 
 $wgMFAutodetectMobileView = true;
+$wgMFDefaultSkinClass = 'SkinMinerva';
 
 $wgPluggableAuth_Class = 'OpenIDConnect';
 $wgPluggableAuth_EnableLocalLogin = false;
