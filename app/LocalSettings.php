@@ -136,6 +136,7 @@ $wgDefaultSkin = "vector";
 #wfLoadSkin( 'MonoBook' );
 #wfLoadSkin( 'Timeless' );
 wfLoadSkin( 'Vector' );
+wfLoadSkin( 'MinervaNeue' );
 
 wfLoadExtension( 'PluggableAuth' );
 wfLoadExtension( 'OpenIDConnect' );
