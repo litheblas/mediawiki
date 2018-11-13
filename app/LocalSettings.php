@@ -140,7 +140,9 @@ wfLoadSkin( 'Vector' );
 wfLoadExtension( 'PluggableAuth' );
 wfLoadExtension( 'OpenIDConnect' );
 wfLoadExtension( 'WikiEditor' );
+wfLoadExtension( 'MobileFrontend' );
 
+$wgMFAutodetectMobileView = true;
 
 $wgPluggableAuth_Class = 'OpenIDConnect';
 $wgPluggableAuth_EnableLocalLogin = false;

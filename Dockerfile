@@ -33,6 +33,7 @@ RUN apk add --no-cache \
     supervisor \
   && git clone --branch 5.4 --depth=1 https://github.com/wikimedia/mediawiki-extensions-PluggableAuth.git ${APP_ROOT}/extensions/PluggableAuth \
   && git clone --branch 5.1 --depth=1 https://github.com/wikimedia/mediawiki-extensions-OpenIDConnect.git ${APP_ROOT}/extensions/OpenIDConnect \
+  && git clone --branch master --depth=1 https://github.com/wikimedia/mediawiki-extensions-MobileFrontend.git ${APP_ROOT}/extensions/MobileFrontend \
   && mkdir -p /run/nginx /tmp/mediawiki_cache \
   && chown nginx:nginx /tmp/mediawiki_cache \
   && ln -sf /dev/stdout /var/log/nginx/access.log \
