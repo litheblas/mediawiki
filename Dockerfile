@@ -1,6 +1,6 @@
 FROM mediawiki:1.32 AS upstream
 
-FROM alpine:edge AS runtime
+FROM alpine:latest AS runtime
 ENV LC_ALL=en_US.UTF-8
 ENV WWW_ROOT=/app
 ENV APP_ROOT=/app/w
