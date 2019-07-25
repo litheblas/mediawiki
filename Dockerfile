@@ -36,7 +36,6 @@ RUN apk add --no-cache \
   && git clone --branch REL1_32 --depth=1 https://github.com/wikimedia/mediawiki-extensions-MobileFrontend.git ${APP_ROOT}/extensions/MobileFrontend \
   && git clone --depth=1 https://github.com/wikimedia/mediawiki-extensions-RandomInCategory.git ${APP_ROOT}/extensions/RandomInCategory \
   && git clone --depth=1 https://github.com/JeroenDeDauw/Maps.git ${APP_ROOT}/extensions/Maps \
-  && git clone --depth=1 https://github.com/SemanticMediaWiki/SemanticMediaWiki.git ${APP_ROOT}/extensions/SemanticMediaWiki \
   && git clone --branch REL1_32 --depth=1 https://github.com/wikimedia/mediawiki-skins-MinervaNeue.git ${APP_ROOT}/skins/MinervaNeue \
   && mkdir -p /run/nginx /tmp/mediawiki_cache \
   && chown nginx:nginx /tmp/mediawiki_cache \
