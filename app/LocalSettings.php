@@ -164,6 +164,7 @@ require_once __DIR__ . '/extensions/Maps/Maps_Settings.php';
 $egMapsDefaultService = 'leaflet';
 
 ## Semantic MediaWiki
+require_once "$IP/extensions/SemanticMediaWiki/SemanticMediaWiki.php";
 enableSemantics( 'wiki.litheblas.org' );
 
 require_once "$IP/extensions/RandomInCategory/RandomInCategory.php";
