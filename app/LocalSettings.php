@@ -158,6 +158,16 @@ $wgOpenIDConnect_Config[getenv("MW_OIDC_URL")] = [
 ];
 $wgOpenIDConnect_MigrateUsersByUserName = true;
 
+## Maps
+wfLoadExtension( 'Maps' );
+require_once __DIR__ . '/extensions/Maps/Maps_Settings.php';
+$egMapsDefaultService = 'leaflet';
+
+## Semantic MediaWiki
+enableSemantics( 'wiki.litheblas.org' );
+
+require_once "$IP/extensions/RandomInCategory/RandomInCategory.php";
+
 # These settings should probably be commented in production.
 # $wgDebugLogFile = "/var/log/mediawiki-debug.log";
 # $wgShowExceptionDetails = true;
