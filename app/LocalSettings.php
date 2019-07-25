@@ -163,6 +163,9 @@ wfLoadExtension( 'Maps' );
 require_once __DIR__ . '/extensions/Maps/Maps_Settings.php';
 $egMapsDefaultService = 'leaflet';
 
+## Semantic MediaWiki
+enableSemantics( 'wiki.litheblas.org' );
+
 require_once "$IP/extensions/RandomInCategory/RandomInCategory.php";
 
 # These settings should probably be commented in production.
