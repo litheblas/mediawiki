@@ -54,8 +54,5 @@ COPY etc/php-fpm-www.conf /etc/php7/php-fpm.d/www.conf
 COPY etc/nginx.conf /etc/nginx/conf.d/default.conf
 COPY etc/supervisord.conf /etc/supervisord.conf
 
-# Run semantic wiki upgrade
-RUN php extensions/SemanticMediaWiki/maintenance/setupStore.php
-
 EXPOSE 80
 CMD ["supervisord"]

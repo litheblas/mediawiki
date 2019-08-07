@@ -1,7 +1,6 @@
 {
 	"require": {
-		"mediawiki/maps": "^7",
-		"mediawiki/semantic-media-wiki": "^3.0"
+		"mediawiki/maps": "^7"
     },
 	"extra": {
 		"merge-plugin": {
