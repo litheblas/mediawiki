@@ -62,6 +62,7 @@ $wgMemCachedServers = [];
 
 ## File uploads
 $wgEnableUploads = true;
+$wgStrictFileExtensions = false;
 $wgFileExtensions = array_merge(
   $wgFileExtensions,
   [
@@ -77,6 +78,7 @@ $wgFileExtensions = array_merge(
     "sib",  # Sibelius
     "svg",
     "ttf",  # TrueType font
+    "ps",
   ]
 );
 $wgUseImageMagick = true;
