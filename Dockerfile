@@ -35,6 +35,7 @@ RUN apk add --no-cache \
   && git clone --branch 5.1 --depth=1 https://github.com/wikimedia/mediawiki-extensions-OpenIDConnect.git ${APP_ROOT}/extensions/OpenIDConnect \
   && git clone https://github.com/wikimedia/mediawiki-extensions-ParserFunctions.git ${APP_ROOT}/extensions/ParserFunctions \
   && git clone --branch REL1_32 --depth=1 https://github.com/wikimedia/mediawiki-extensions-MobileFrontend.git ${APP_ROOT}/extensions/MobileFrontend \
+  && git clone --depth=1 https://github.com/SemanticMediaWiki/SemanticMediaWiki.git ${APP_ROOT}/extensions/SemanticMediaWiki \
   && git clone --depth=1 https://github.com/wikimedia/mediawiki-extensions-RandomInCategory.git ${APP_ROOT}/extensions/RandomInCategory \
   && git clone --branch REL1_32 --depth=1 https://github.com/wikimedia/mediawiki-skins-MinervaNeue.git ${APP_ROOT}/skins/MinervaNeue \
   && mkdir -p /run/nginx /tmp/mediawiki_cache \

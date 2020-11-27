@@ -164,6 +164,7 @@ $wgOpenIDConnect_Config[getenv("MW_OIDC_URL")] = [
 $wgOpenIDConnect_MigrateUsersByUserName = true;
 
 ## Semantic MediaWiki
+require_once "$IP/extensions/SemanticMediaWiki/SemanticMediaWiki.php";
 enableSemantics( 'wiki.litheblas.org' );
 
 ## Maps
