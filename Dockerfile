@@ -54,7 +54,7 @@ COPY etc/php-fpm-www.conf /etc/php7/php-fpm.d/www.conf
 COPY etc/nginx.conf /etc/nginx/conf.d/default.conf
 COPY etc/supervisord.conf /etc/supervisord.conf
 
-RUN php maintenance/update.php
-
 EXPOSE 80
 CMD ["supervisord"]
+
+RUN php maintenance/update.php
