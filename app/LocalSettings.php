@@ -144,7 +144,6 @@ wfLoadExtension( 'PluggableAuth' );
 wfLoadExtension( 'OpenIDConnect' );
 wfLoadExtension( 'WikiEditor' );
 wfLoadExtension( 'MobileFrontend' );
-wfLoadExtension( 'ParserFunctions' );
 
 $wgPFEnableStringFunctions = true;
 
