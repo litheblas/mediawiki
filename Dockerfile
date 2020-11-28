@@ -56,5 +56,3 @@ COPY etc/supervisord.conf /etc/supervisord.conf
 
 EXPOSE 80
 CMD ["supervisord"]
-
-RUN php maintenance/update.php
