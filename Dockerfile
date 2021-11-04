@@ -1,4 +1,4 @@
-FROM mediawiki:1.32 AS upstream
+FROM mediawiki:1.36.2 AS upstream
 
 FROM alpine:latest AS runtime
 ENV LC_ALL=en_US.UTF-8
