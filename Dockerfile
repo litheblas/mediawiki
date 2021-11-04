@@ -1,4 +1,4 @@
-FROM mediawiki:1.36.2 AS upstream
+FROM mediawiki:1.32 AS upstream
 
 FROM alpine:latest AS runtime
 ENV LC_ALL=en_US.UTF-8
@@ -31,11 +31,11 @@ RUN apk add --no-cache \
     php7-xmlreader \
     php7-xmlwriter \
     supervisor \
-  && git clone --branch REL1_36 --depth=1 https://github.com/wikimedia/mediawiki-extensions-PluggableAuth.git ${APP_ROOT}/extensions/PluggableAuth \
-  && git clone --branch REL1_36 --depth=1 https://github.com/wikimedia/mediawiki-extensions-OpenIDConnect.git ${APP_ROOT}/extensions/OpenIDConnect \
-  && git clone --branch REL1_36 --depth=1 https://github.com/wikimedia/mediawiki-extensions-MobileFrontend.git ${APP_ROOT}/extensions/MobileFrontend \
-  && git clone --branch REL1_36 --depth=1 https://github.com/wikimedia/mediawiki-extensions-RandomInCategory.git ${APP_ROOT}/extensions/RandomInCategory \
-  && git clone --branch REL1_36 --depth=1 https://github.com/wikimedia/mediawiki-skins-MinervaNeue.git ${APP_ROOT}/skins/MinervaNeue \
+  && git clone --branch REL1_32 --depth=1 https://github.com/wikimedia/mediawiki-extensions-PluggableAuth.git ${APP_ROOT}/extensions/PluggableAuth \
+  && git clone --branch REL1_32 --depth=1 https://github.com/wikimedia/mediawiki-extensions-OpenIDConnect.git ${APP_ROOT}/extensions/OpenIDConnect \
+  && git clone --branch REL1_32 --depth=1 https://github.com/wikimedia/mediawiki-extensions-MobileFrontend.git ${APP_ROOT}/extensions/MobileFrontend \
+  && git clone --branch REL1_32 --depth=1 https://github.com/wikimedia/mediawiki-extensions-RandomInCategory.git ${APP_ROOT}/extensions/RandomInCategory \
+  && git clone --branch REL1_32 --depth=1 https://github.com/wikimedia/mediawiki-skins-MinervaNeue.git ${APP_ROOT}/skins/MinervaNeue \
   && mkdir -p /run/nginx /tmp/mediawiki_cache \
   && chown nginx:nginx /tmp/mediawiki_cache \
   && ln -sf /dev/stdout /var/log/nginx/access.log \
