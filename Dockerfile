@@ -40,9 +40,7 @@ RUN apk add --no-cache \
   && chown nginx:nginx /tmp/mediawiki_cache \
   && ln -sf /dev/stdout /var/log/nginx/access.log \
   && ln -sf /dev/stderr /var/log/nginx/error.log \
-  && ln -sf /dev/stderr /var/log/php7/error.log \
-  # Illustrator files are often made PDF-compatible
-  && sed -i "s:application/pdf pdf:application/pdf ai pdf:" includes/libs/mime/mime.types
+  && ln -sf /dev/stderr /var/log/php7/error.log
 
 COPY app/composer.local.json ${APP_ROOT}/
 RUN composer update --no-interaction --no-dev
