@@ -150,15 +150,18 @@ $wgPFEnableStringFunctions = true;
 $wgMFAutodetectMobileView = true;
 $wgMFDefaultSkinClass = 'SkinMinerva';
 
-$wgPluggableAuth_Class = 'OpenIDConnect';
 $wgPluggableAuth_EnableLocalLogin = false;
 $wgPluggableAuth_EnableAutoLogin = false;
 
-$wgOpenIDConnect_Config[getenv("MW_OIDC_URL")] = [
-  'clientID' => getenv("MW_OIDC_CLIENT_ID"),
-  'clientsecret' => getenv("MW_OIDC_CLIENT_SECRET"),
-  'name' => getenv("MW_OIDC_NAME"),
-  'scope' => [ 'openid', 'profile', 'email' ],
+$wgPluggableAuth_Config[] = [
+  'plugin' => 'OpenIDConnect',
+  'data' => [
+    'providerURL' => getenv('MW_OIDC_URL'),
+    'clientID' => getenv('MW_OIDC_CLIENT_ID'),
+    'clientsecret' => getenv('MW_OIDC_CLIENT_SECRET'),
+    'name' => getenv('MW_OIDC_NAME'),
+    'scope' => [ 'openid', 'profile', 'email' ],
+  ]
 ];
 $wgOpenIDConnect_MigrateUsersByUserName = true;
 
@@ -170,7 +173,10 @@ wfLoadExtension( 'Maps' );
 require_once __DIR__ . '/extensions/Maps/Maps_Settings.php';
 $egMapsDefaultService = 'leaflet';
 
-require_once "$IP/extensions/RandomInCategory/RandomInCategory.php";
+wfLoadExtension('RandomInCategory');
+
+## Uncomment for debug info:
+// $wgShowExceptionDetails = true;
 
 # These settings should probably be commented in production.
 # $wgDebugLogFile = "/var/log/mediawiki-debug.log";
