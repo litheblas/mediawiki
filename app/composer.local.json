@@ -1,6 +1,6 @@
 {
 	"require": {
-		"mediawiki/maps": "^7"
+		"mediawiki/maps": "^10.1"
     },
 	"extra": {
 		"merge-plugin": {
