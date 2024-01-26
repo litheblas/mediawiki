@@ -25,7 +25,7 @@ services:
       MW_UPGRADE_KEY: '1234'
 
   database:
-    image: mariadb
+    image: mariadb:11
     environment:
       MYSQL_DATABASE: mediawiki
       MYSQL_USER: mediawiki
