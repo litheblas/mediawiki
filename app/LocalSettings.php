@@ -175,9 +175,6 @@ $egMapsDefaultService = 'leaflet';
 
 wfLoadExtension('RandomInCategory');
 
-## Uncomment for debug info:
-// $wgShowExceptionDetails = true;
-
 # These settings should probably be commented in production.
 # $wgDebugLogFile = "/var/log/mediawiki-debug.log";
 # $wgShowExceptionDetails = true;
