@@ -12,6 +12,7 @@ RUN apk add --no-cache \
     diffutils \
     git \
     imagemagick \
+    jpeg \
     nginx \
     php82 \
     php82-calendar \
