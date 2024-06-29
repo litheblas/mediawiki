@@ -1,8 +1,6 @@
-version: '3.9'
-
 services:
   mediawiki:
-    image: ghcr.io/litheblas/mediawiki:latest
+    image: ghcr.io/litheblas/mediawiki:1.42
     build:
       context: .
     ports:
@@ -26,7 +24,7 @@ services:
       MW_UPGRADE_KEY: '1234'
 
   database:
-    image: mariadb:11
+    image: mariadb:11.4
     environment:
       MYSQL_DATABASE: mediawiki
       MYSQL_USER: mediawiki
