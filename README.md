@@ -18,6 +18,6 @@ Currently, MediaWikis install script does not automatically update the database 
 ```
 $ sudo docker exec -it <MEDIAWIKI_APP> cat maintenance/tables-generated.sql | sudo docker exec -i <MEDIAWIKI_DATABASE> mariadb -D <DATABASE_NAME> -u <DATABASE_USER> --password=<DATABASE_PASSWORD>
 
-$ sudo docker exec -it <MEDIAWIKI_APP> php82 maintenance/run.php update
+$ sudo docker exec -it <MEDIAWIKI_APP> php83 maintenance/run.php update
 ```
 which essentially installs and updates the schema in the database.
