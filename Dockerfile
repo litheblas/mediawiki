@@ -14,25 +14,25 @@ RUN apk add --no-cache \
     imagemagick \
     jpeg \
     nginx \
-    php82 \
-    php82-calendar \
-    php82-ctype \
-    php82-curl \
-    php82-dom \
-    php82-fileinfo \
-    php82-fpm \
-    php82-iconv \
-    php82-mbstring \
-    php82-mysqli \
-    php82-intl \
-    php82-opcache \
-    php82-pecl-apcu \
-    php82-session \
-    php82-simplexml \
-    php82-tokenizer \
-    php82-xml \
-    php82-xmlreader \
-    php82-xmlwriter \
+    php83 \
+    php83-calendar \
+    php83-ctype \
+    php83-curl \
+    php83-dom \
+    php83-fileinfo \
+    php83-fpm \
+    php83-iconv \
+    php83-mbstring \
+    php83-mysqli \
+    php83-intl \
+    php83-opcache \
+    php83-pecl-apcu \
+    php83-session \
+    php83-simplexml \
+    php83-tokenizer \
+    php83-xml \
+    php83-xmlreader \
+    php83-xmlwriter \
     supervisor \
   && git clone --branch REL1_42 --depth=1 https://github.com/wikimedia/mediawiki-extensions-PluggableAuth.git ${APP_ROOT}/extensions/PluggableAuth \
   && git clone --branch REL1_42 --depth=1 https://github.com/wikimedia/mediawiki-extensions-OpenIDConnect.git ${APP_ROOT}/extensions/OpenIDConnect \
@@ -42,15 +42,15 @@ RUN apk add --no-cache \
   && chown nginx:nginx /tmp/mediawiki_cache \
   && ln -sf /dev/stdout /var/log/nginx/access.log \
   && ln -sf /dev/stderr /var/log/nginx/error.log \
-  && ln -sf /dev/stderr /var/log/php82/error.log
+  && ln -sf /dev/stderr /var/log/php83/error.log
 
 COPY app/composer.local.json ${APP_ROOT}/
 RUN composer update --no-interaction --no-dev --ignore-platform-reqs
 
 COPY app/LocalSettings.php ${APP_ROOT}/
 COPY app/logo.svg ${APP_ROOT}/resources/assets/
-COPY etc/php.ini /etc/php82/conf.d/99_custom.ini
-COPY etc/php-fpm-www.conf /etc/php82/php-fpm.d/www.conf
+COPY etc/php.ini /etc/php83/conf.d/99_custom.ini
+COPY etc/php-fpm-www.conf /etc/php83/php-fpm.d/www.conf
 COPY etc/nginx.conf /etc/nginx/http.d/default.conf
 COPY etc/supervisord.conf /etc/supervisord.conf
 
