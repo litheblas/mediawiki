@@ -34,10 +34,10 @@ RUN apk add --no-cache \
     php82-xmlreader \
     php82-xmlwriter \
     supervisor \
-  && git clone --branch REL1_41 --depth=1 https://github.com/wikimedia/mediawiki-extensions-PluggableAuth.git ${APP_ROOT}/extensions/PluggableAuth \
-  && git clone --branch REL1_41 --depth=1 https://github.com/wikimedia/mediawiki-extensions-OpenIDConnect.git ${APP_ROOT}/extensions/OpenIDConnect \
-  && git clone --branch REL1_41 --depth=1 https://github.com/wikimedia/mediawiki-extensions-MobileFrontend.git ${APP_ROOT}/extensions/MobileFrontend \
-  && git clone --branch REL1_41 --depth=1 https://github.com/wikimedia/mediawiki-extensions-RandomInCategory.git ${APP_ROOT}/extensions/RandomInCategory \
+  && git clone --branch REL1_42 --depth=1 https://github.com/wikimedia/mediawiki-extensions-PluggableAuth.git ${APP_ROOT}/extensions/PluggableAuth \
+  && git clone --branch REL1_42 --depth=1 https://github.com/wikimedia/mediawiki-extensions-OpenIDConnect.git ${APP_ROOT}/extensions/OpenIDConnect \
+  && git clone --branch REL1_42 --depth=1 https://github.com/wikimedia/mediawiki-extensions-MobileFrontend.git ${APP_ROOT}/extensions/MobileFrontend \
+  && git clone --branch REL1_42 --depth=1 https://github.com/wikimedia/mediawiki-extensions-RandomInCategory.git ${APP_ROOT}/extensions/RandomInCategory \
   && mkdir -p /run/nginx /tmp/mediawiki_cache \
   && chown nginx:nginx /tmp/mediawiki_cache \
   && ln -sf /dev/stdout /var/log/nginx/access.log \
