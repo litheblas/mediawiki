@@ -140,8 +140,7 @@ $wgDefaultSkin = "vector";
 wfLoadSkin( 'Vector' );
 wfLoadSkin( 'MinervaNeue' );
 
-wfLoadExtension( 'PluggableAuth' );
-wfLoadExtension( 'OpenIDConnect' );
+wfLoadExtension( 'Auth_remoteuser' );
 wfLoadExtension( 'WikiEditor' );
 wfLoadExtension( 'MobileFrontend' );
 
@@ -150,20 +149,15 @@ $wgPFEnableStringFunctions = true;
 $wgMFAutodetectMobileView = true;
 $wgMFDefaultSkinClass = 'SkinMinerva';
 
-$wgPluggableAuth_EnableLocalLogin = false;
-$wgPluggableAuth_EnableAutoLogin = false;
+// Authentication using Auth_remoteuser extension and the 
+$wgAuthRemoteuserUserName = $_SERVER[ 'HTTP_X_FORWARDED_PREFERRED_USERNAME' ];
 
-$wgPluggableAuth_Config[] = [
-  'plugin' => 'OpenIDConnect',
-  'data' => [
-    'providerURL' => getenv('MW_OIDC_URL'),
-    'clientID' => getenv('MW_OIDC_CLIENT_ID'),
-    'clientsecret' => getenv('MW_OIDC_CLIENT_SECRET'),
-    'name' => getenv('MW_OIDC_NAME'),
-    'scope' => [ 'openid', 'profile', 'email' ],
-  ]
+$wgAuthRemoteuserUserUrls = [
+    'logout' => function( $metadata ) {
+        $user = $metadata[ 'remoteUserName' ];
+        return '/oauth2/sign_out' . $user;
+    }
 ];
-$wgOpenIDConnect_MigrateUsersByUserName = true;
 
 ## Semantic MediaWiki
 // enableSemantics( 'wiki.litheblas.org' );

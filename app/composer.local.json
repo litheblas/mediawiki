@@ -1,12 +1,5 @@
 {
 	"require": {
 		"mediawiki/maps": "^10.1"
-    },
-	"extra": {
-		"merge-plugin": {
-			"include": [
-				"extensions/OpenIDConnect/composer.json"
-			]
-		}
 	}
 }

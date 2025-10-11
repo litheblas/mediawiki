@@ -34,8 +34,7 @@ RUN apk add --no-cache \
     php83-xmlreader \
     php83-xmlwriter \
     supervisor \
-  && git clone --branch REL1_42 --depth=1 https://github.com/wikimedia/mediawiki-extensions-PluggableAuth.git ${APP_ROOT}/extensions/PluggableAuth \
-  && git clone --branch REL1_42 --depth=1 https://github.com/wikimedia/mediawiki-extensions-OpenIDConnect.git ${APP_ROOT}/extensions/OpenIDConnect \
+  && git clone --branch REL1_42 --depth=1 https://github.com/wikimedia/mediawiki-extensions-Auth_remoteuser.git ${APP_ROOT}/extensions/Auth_remoteuser \
   && git clone --branch REL1_42 --depth=1 https://github.com/wikimedia/mediawiki-extensions-MobileFrontend.git ${APP_ROOT}/extensions/MobileFrontend \
   && git clone --branch REL1_42 --depth=1 https://github.com/wikimedia/mediawiki-extensions-RandomInCategory.git ${APP_ROOT}/extensions/RandomInCategory \
   && mkdir -p /run/nginx /tmp/mediawiki_cache \
