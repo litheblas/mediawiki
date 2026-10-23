@@ -1,6 +1,6 @@
 services:
   mediawiki:
-    image: ghcr.io/litheblas/mediawiki:1.42
+    image: ghcr.io/litheblas/mediawiki:v1.46.2
     build:
       context: .
     ports:

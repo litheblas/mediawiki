@@ -14,10 +14,16 @@ $ sudo docker buildx build . --tag ghcr.io/litheblas/mediawiki:latest
 $ sudo docker compose -f docker-compose.ci.yml up
 ```
 
-Currently, MediaWikis install script does not automatically update the database models. Once the containers are up and running a workaround needs to run:
-```
-$ sudo docker exec -it <MEDIAWIKI_APP> cat maintenance/tables-generated.sql | sudo docker exec -i <MEDIAWIKI_DATABASE> mariadb -D <DATABASE_NAME> -u <DATABASE_USER> --password=<DATABASE_PASSWORD>
+To initialize the Wiki, run the following command:
 
-$ sudo docker exec -it <MEDIAWIKI_APP> php83 maintenance/run.php update
+```php
+$ docker exec -it <MEDIAWIKI_APP> php85 maintenance/run.php installPreConfigured
 ```
-which essentially installs and updates the schema in the database.
+
+## Upgrading an existing Wiki
+
+Run the command
+
+```php
+$ docker exec -it <MEDIAWIKI_APP> php85 maintenance/run.php update
+```
